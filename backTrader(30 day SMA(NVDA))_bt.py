@@ -35,7 +35,7 @@ df = df.dropna(subset=['open','high','low','close','volume'])
 # My SMA strategy 
 class testStrategy(bt.Strategy):
     def __init__(self):
-        self.sma = bt.indicators.SimpleMovingAverage(self.data.close, period=45) # period changes time
+        self.sma = bt.indicators.SimpleMovingAverage(self.data.close, period=30) # period changes time
 
     def next(self):
         if not self.position and self.data.close[0] > self.sma[0]:
@@ -61,4 +61,5 @@ cerebro.broker.setcash(100000.0)
 print("Starting value, ", cerebro.broker.getvalue())
 cerebro.run()
 print("Final Portfolio Value:", cerebro.broker.getvalue())
+
 cerebro.plot()
