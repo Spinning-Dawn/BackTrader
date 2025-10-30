@@ -11,3 +11,4 @@
 <h4>🌟 Current Features</h4>
 
 - 30-day SMA strategy for Apple
+- 30-day SMA strategy for NVIDIA
